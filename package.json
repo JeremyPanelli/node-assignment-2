@@ -2,7 +2,7 @@
   "scripts": {
     "start": "node app.js",
     "test":"git checkout chinook.db; forever start app.js; ./node_modules/jest/bin/jest.js; forever stop app.js; git checkout chinook.db"
-},
+  },
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
@@ -13,5 +13,5 @@
     "chai": "^4.2.0",
     "frisby": "^2.1.1",
     "jest": "^24.7.1"
-  },
+  }
 }
