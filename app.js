@@ -67,7 +67,7 @@ app.patch('/api/tracks/:id', (request, result) => {
                 });
             });
         } else {
-            res.status(404).send();
+            result.status(404).send();
         }
     })
 });

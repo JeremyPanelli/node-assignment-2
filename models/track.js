@@ -32,7 +32,7 @@ module.exports = sequelize.define('track', {
     validate:{
       isNumeric:{
         args:true,
-        msg:'Milliseconds must be numeric'
+        msg:'Unit Price must be numeric'
       }
     }
   }
