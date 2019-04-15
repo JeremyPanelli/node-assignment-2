@@ -1,14 +1,14 @@
-const WebSocket = require("ws");
+let WebSocket = require("ws");
 
-const wss = new WebSocket.Server({ port: 8080 });
+let wss = new WebSocket.Server({ port: process.env.PORT || 8080 });
 
 wss.on("connection", ws => {
   ws.on("message", message => {
     console.log(`Received: ${message}`);
     ws.send(message);
-  });
 
-  setTimeout(() => {
-    ws.send("hello");
-  }, 2000);
+    wss.clients.forEach(client => {
+      client.send(message);
+    });
+  });
 });
